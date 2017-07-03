@@ -1,11 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <title>Stella</title>
-    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <!--link rel="stylesheet" th:href="@{/style.css}" /-->
+    <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}" />
+    <script lang="javascript" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js}" />
 </head>
 <body>
-    <h1><span th:text="${welcome}"></span></h1>
-    <p>Jó helyen jársz!</p>
+<div class="container">
+
+    <!-- Logo -->
+    <div id="logo">
+        <h1 th:text="#{menu.title}"></h1>
+    </div>
+
+    <!-- Nav -->
+    <nav id="nav">
+        <ul>
+            <li class="active"><a href="?pid=nyitolap" th:text="#{menu.item01}"></a></li>
+            <li><a href="?pid=alapito" th:text="#{menu.item02}"></a></li>
+            <li><a href="?pid=karnagyok" th:text="#{menu.item03}"></a></li>
+            <li><a href="?pid=galeria" th:text="#{menu.item04}"></a></li>
+            <li><a href="?pid=media" th:text="#{menu.item05}"></a></li>
+            <li><a href="?pid=video" th:text="#{menu.item06}"></a></li>
+            <li><a href="?pid=repertoar" th:text="#{menu.item07}"></a></li>
+            <li><a href="?pid=fellepesek" th:text="#{menu.item08}"></a></li>
+            <li><a href="?pid=vendegkonyv" th:text="#{menu.item09}"></a></li>
+            <li><a href="?pid=kapcsolat" th:text="#{menu.item10}"></a></li>
+        </ul>
+    </nav>
+</div>
+    <h1 th:text="#{homepage.welcome_message}"></h1>
+    <p><span th:text="${welcome}"></span><br />
+    Jó helyen jársz!</p>
 </body>
 </html>

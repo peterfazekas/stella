@@ -1,4 +1,4 @@
-package hu.stella;
+package hu.stella.webcontrollers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/")
 public class HomeController {
 
-    @RequestMapping(value="/", method= RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(Model model) {
         String welcomeMessage = "Helló Stella";
         model.addAttribute("welcome", welcomeMessage);
