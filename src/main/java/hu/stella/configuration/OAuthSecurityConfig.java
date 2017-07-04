@@ -1,4 +1,4 @@
-package hu.stella.security;
+package hu.stella.configuration;
 
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.context.annotation.Configuration;
@@ -15,7 +15,7 @@ public class OAuthSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf()
                     .disable()
                 .authorizeRequests()
-                .antMatchers("/music").access("hasRole('READER')")
+                .antMatchers("/music/**").access("hasRole('READER')")
                 .antMatchers("/**").permitAll()
                 .anyRequest()
                     .authenticated();

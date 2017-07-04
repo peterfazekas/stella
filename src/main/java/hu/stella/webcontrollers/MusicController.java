@@ -1,16 +1,25 @@
 package hu.stella.webcontrollers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.security.Principal;
+
 @Controller
-@RequestMapping("/")
 public class MusicController {
 
+    @GetMapping("music/in")
+    public String getLogin(Principal principal) {
+        principal.getName();
+        return "music";
+    }
 
-    @RequestMapping(value = "music", method = RequestMethod.GET)
-    public String login() {
+    @PostMapping("music/in")
+    public String postLogin(Principal principal) {
+        principal.getName();
         return "music";
     }
 
