@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="hu">
-<head>
-    <title>Stella</title>
-    <link rel="stylesheet" th:href="@{/style.css}"/>
-</head>
-<body>
-    <h1>Music</h1>
-</body>
+<html lang="hu"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="default">
+    <head>
+        <title>Stella - Music</title>
+    </head>
+    <body>
+        <div layout:fragment="content">
+            <h1>Music</h1>
+            <p th:text="${'Method: ' + method}"></p>
+            <p th:text="${'User: ' + user}"></p>
+        </div>
+    </body>
 </html>

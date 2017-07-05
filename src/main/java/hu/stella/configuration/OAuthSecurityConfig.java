@@ -15,9 +15,8 @@ public class OAuthSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf()
                     .disable()
                 .authorizeRequests()
-                .antMatchers("/music/**").access("hasRole('READER')")
+                .antMatchers("/music/**").access("hasAuthority('ROLE_USER')")
                 .antMatchers("/**").permitAll()
-                .anyRequest()
-                    .authenticated();
+                .anyRequest().authenticated();
     }
 }
