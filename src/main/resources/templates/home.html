@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="hu" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Stella</title>
-    <!--link rel="stylesheet" th:href="@{/style.css}" /-->
-    <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css}" />
-    <script lang="javascript" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js}" />
-</head>
-<body>
-    <div th:replace="fragments/header :: header">Header</div>
-    <h1 th:text="#{homepage.welcome_message}"></h1>
-    <p><span th:text="${welcome}"></span><br />
-    Jó helyen jársz!</p>
-</body>
+<html lang="hu"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="default">
+    <head>
+        <title>Stella</title>
+    </head>
+    <body>
+        <div layout:fragment="content">
+            <h1 th:text="#{homepage.welcome_message}"></h1>
+            <p><span th:text="${welcome}"></span><br />Jó helyen jársz!</p>
+        </div>
+    </body>
 </html>

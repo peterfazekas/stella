@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="hu">
-<head>
-    <title>Oops!</title>
-    <link rel="stylesheet" th:href="@{/style.css}"></link>
-</head>
-<html>
-<div class="errorPage">
-    <span class="oops">Oops!</span><br/>
-    <p>There seems to be a problem with the page you requested (<span th:text="${path}"></span>).</p>
-    <p th:text="${'Details: ' + message}"></p>
-</div>
-</html>
+<html lang="hu"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="default">
+    <head>
+        <title>Oops!</title>
+    </head>
+    <body>
+        <div layout:fragment="content">
+            <h1>Oops!</h1>
+            <p>There seems to be a problem with the page you requested (<span th:text="${path}"></span>).</p>
+            <p th:text="${'Details: ' + message}"></p>
+        </div>
+    </body>
 </html>
