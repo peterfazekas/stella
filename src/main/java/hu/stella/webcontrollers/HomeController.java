@@ -16,6 +16,7 @@ public class HomeController {
     public String home(Principal principal, Model model) {
         String welcomeMessage = "Helló Stella";
         model.addAttribute("welcome", welcomeMessage);
+        //GET https://www.googleapis.com/gmail/v1/users/102763465467931846677/profile?fields=emailAddress&key={AIzaSyDVVDtmSxrLNrbKJ5uJYi7FVHBbcL7wfP0}
         return (principal != null) ? "redirect:/music/callback" : "home";
     }
 }

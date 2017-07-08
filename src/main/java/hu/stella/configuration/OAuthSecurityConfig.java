@@ -83,7 +83,6 @@ public class OAuthSecurityConfig extends WebSecurityConfigurerAdapter {
         tokenServices.setRestTemplate(template);
         filter.setTokenServices(tokenServices);
         filter.setAuthenticationFailureHandler(new SimpleUrlAuthenticationFailureHandler(HOME_URL));
-//        filter.setAuthenticationSuccessHandler(new SimpleUrlAuthenticationSuccessHandler("#"));
         return filter;
     }
 }
