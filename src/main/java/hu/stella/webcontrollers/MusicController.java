@@ -9,11 +9,10 @@ import java.security.Principal;
 @Controller
 public class MusicController {
 
-    @GetMapping("/music/in")
-    public String getLogin(Principal principal, Model model) {
-        model.addAttribute("method", "GET");
-        model.addAttribute("user", principal);
+    @GetMapping("/music/callback")
+    public String googleLogin(Principal principal, Model model) {
+        model.addAttribute("user", principal.getName());
+        model.addAttribute("principal", principal);
         return "music/in";
     }
-
 }
