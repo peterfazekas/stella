@@ -36,3 +36,5 @@ facebook:
 logging:
     level:
         org.springframework.security: DEBUG
+
+#https://github.com/skate056/spring-security-oauth2-google
