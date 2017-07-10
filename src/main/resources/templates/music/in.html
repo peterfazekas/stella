@@ -9,10 +9,13 @@
     <body>
         <div layout:fragment="content">
             <h1>Music</h1>
-            <p th:text="${'User: ' + user}"></p>
+            <p><a th:href="@{${link}}"><span th:text="${'User: ' + name}"></span></a></p>
+            <p th:text="${'Name: ' + family_name + ' ' + given_name}"></p>
+            <img src="" th:attr="src=@{${picture}}"/>
             <p th:text="${'Principal: ' + principal}"></p>
-            <p th:text="${'Query: ' + query}"></p>
-            <p th:text="${'Details: ' + data}">details</p>
+            <p th:text="${'tokenType: ' + tokenType}"></p>
+            <p th:text="${'tokenValue: ' + tokenValue}"></p>
+            <p th:text="${'jsessionid: ' + jsessionid}"></p>
         </div>
     </body>
 </html>
